@@ -1,0 +1,24 @@
+{
+  "name": "tip-manager",
+  "version": "1.0.0",
+  "description": "interview assignment application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "javascript",
+    "express"
+  ],
+  "author": "Parikshit",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
