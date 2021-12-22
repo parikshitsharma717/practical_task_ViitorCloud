@@ -1,5 +1,5 @@
 const User = require("../models/user")
-const { isBase64, convertImageToBinary } = require("../utils/helper")
+const { isBase64, convertImageToBinary, sendMail } = require("../utils/helper")
 const { registerValidation, loginValidation } = require("../validations/user.validation")
 const jwt = require('jsonwebtoken')
 
@@ -33,11 +33,11 @@ exports.register = async (req, res) => {
         user.proPic = user._id+".jpg"
         user.token = token
         const savedUser = await user.save()
+        //await sendMail(user.email, user.name)
         res.status(201).json({
             name: savedUser.name,
             token: savedUser.token
         })
-
     } catch (error) {
         res.status(400).json({
             message: error.message

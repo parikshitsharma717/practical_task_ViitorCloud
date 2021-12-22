@@ -72,7 +72,7 @@ exports.analytics = async (req, res) => {
                 noOfTimes: byPlaces[0].count
             })
         default:
-            const distinct = await Tip.aggregate([
+            let distinct = await Tip.aggregate([
                 {
                     $match: {
                         user: req.user._id,
@@ -88,8 +88,9 @@ exports.analytics = async (req, res) => {
                         totalAmount: { $first: '$totalAmount' },
                         tipAmount: { $first: '$tipAmount'}
                     }
-                }
+                },
             ])
+            distinct = distinct.map(s=> ({spentAt: s._id, totalAmount: s.totalAmount, tipAmount: s.tipAmount}))
             return res.status(200).json(distinct)
 
     }

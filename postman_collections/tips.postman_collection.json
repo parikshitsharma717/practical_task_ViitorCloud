@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "8a8d99fc-5934-4ecb-bb65-8e8622e57755",
+		"name": "tips",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tip Calculate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWMyNjQwMDA4ODczNDE3NDYwZmQ5YWIiLCJpYXQiOjE2NDAxMzA5NzN9.l5sNTdfFIdUzqYJ6Zs6EUaBHxkldSNJVXmNBGsudTi0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"place\": \"Hotel One\",\r\n    \"totalAmount\": 1000,\r\n    \"tipPercentage\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/tip/calculate",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tip",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tip Analytics (tipPercentage)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWMyNjQwMDA4ODczNDE3NDYwZmQ5YWIiLCJpYXQiOjE2NDAxMzA5NzN9.l5sNTdfFIdUzqYJ6Zs6EUaBHxkldSNJVXmNBGsudTi0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tip?analyticsType=tipPercentage&startDate=30-11-2021&endDate=23-12-2021",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tip"
+					],
+					"query": [
+						{
+							"key": "analyticsType",
+							"value": "tipPercentage"
+						},
+						{
+							"key": "startDate",
+							"value": "30-11-2021"
+						},
+						{
+							"key": "endDate",
+							"value": "23-12-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tip Analytics (mostVisitedPlaces)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWMyNjQwMDA4ODczNDE3NDYwZmQ5YWIiLCJpYXQiOjE2NDAxMzA4MDV9.CGiA8rQ5LPhQmBRuZxB0Pczso7uc-QGWiqc7NMK_-bU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tip?analyticsType=mostVisitedPlaces&startDate=30-11-2021&endDate=23-12-2021",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tip"
+					],
+					"query": [
+						{
+							"key": "analyticsType",
+							"value": "mostVisitedPlaces"
+						},
+						{
+							"key": "startDate",
+							"value": "30-11-2021"
+						},
+						{
+							"key": "endDate",
+							"value": "23-12-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tip Analytics (No AnalyticsType)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWMyNjQwMDA4ODczNDE3NDYwZmQ5YWIiLCJpYXQiOjE2NDAxMzA5NzN9.l5sNTdfFIdUzqYJ6Zs6EUaBHxkldSNJVXmNBGsudTi0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tip?startDate=30-11-2021&endDate=23-12-2021",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tip"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "30-11-2021"
+						},
+						{
+							"key": "endDate",
+							"value": "23-12-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
